@@ -1,3 +1,12 @@
+<form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+  <div id="user-input">
+    <label for="wordsearch">Search</label>
+    <input type="text" id="wordsearch" class="form-control" ngModel name="wordsearch" required>
+    <label for="notebookentry">Text</label>
+    <input type="text" id="notebookentry" class="form-control" ngModel name="notebookentry" required>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!searchForm.valid">Search</button>
+</form>
 <pre><label>Word fequency: {{wfrequency}} </label></pre>
 <pre><label>Similar words: {{wsimilarity}} </label></pre>
 
