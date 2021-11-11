@@ -8,7 +8,7 @@ import { SimilarityService } from './services/similarity.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('searchForm') searchForm: NgForm;
+  //@ViewChild('searchForm') searchForm: NgForm;
   title = 'words-similarities';
   wfrequency: number =0;
   wsimilarity: string ="";
@@ -20,10 +20,10 @@ export class AppComponent {
       
   }
 
-  onSubmit(){
-    console.log(this.searchForm);
+  searchWord(word: string, notebook: string){
+    //console.log(this.searchForm);
 
-    this.similarityService.sendGetRequest("wor","word woo wor wor Wor").subscribe((data: any[])=>{
+    this.similarityService.sendGetRequest(word,notebook).subscribe((data: any[])=>{
       console.log(data);
       this.wfrequency= (data as any).frequency;
       this.wsimilarity= (data as any).similarities;
